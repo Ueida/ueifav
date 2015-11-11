@@ -1,0 +1,19 @@
+dropy_homepage:
+    path:     /index
+    defaults: { _controller: DropyBundle:AddFav:index }
+
+dropy_ajouter_article:
+    path: /add_fav
+    defaults: { _controller: DropyBundle:AddFav:addFav }
+
+dropy_ajouter_collection:
+    path: /add_collection
+    defaults: { _controller: DropyBundle:AddFav:addCollection }
+    
+dropy_liste_:
+    path: /list_all
+    defaults: { _controller: DropyBundle:AddFav:view }
+
+dropy_ajouter_article_d:
+    path: /add_fav_d
+    defaults: { _controller: DropyBundle:AddFav:addFavD }

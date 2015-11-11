@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		{% stylesheets
+    		"@DropyBundle/Resources/public/css/ueida.css"
+    		"%kernel.root_dir%/Resources/css/ueida.css"
+		%}
+		<link type="text/css" rel="stylesheet" media="all" href="{{ asset_url }}" />
+		{% endstylesheets %}
+		<title>{% block title %}Uei'fav {% endblock %}</title>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href ="{{ path('dropy_homepage') }}">Accueil</a></li>
+				<li><a href ="{{ path('dropy_ajouter_article') }}">Ajouter un favori</a></li>
+				{# <li><a href ="{{ path('dropy_ajouter_collection') }}">Ajouter une collection</a></li> #}
+				<li><a href ="{{ path('dropy_liste_') }}">Tous les favoris</a></li>
+			</ul>
+		</nav>
+		
+		<div class="ueiuei">
+	    {% block body %}
+	    {% endblock %}
+		</div>
+		
+		<footer>
+		{%block footer %}
+		Application par : {{ webmaster }}~<br />
+		Tel : {{ webmaster_phone }}<br />
+		□−□ // (◐ o ◑ )
+		{% endblock %}
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,3 @@
+dropy:
+    resource: "@DropyBundle/Resources/config/routing.yml"
+    prefix:   /

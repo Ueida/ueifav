@@ -1,0 +1,107 @@
+{% extends "DropyBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }}- Liste favoris{% endblock %}
+
+{% block body %}
+	<h1>Liste des favoris</h1>
+		<div class="ueiuei">
+
+		<h2>Recherche</h2>
+
+		{{ form_start(form) }}
+
+		{{ form_label(form.search_input, 'Recherche :') }}
+			{{ form_widget(form.search_input) }}
+			{{ form_widget(form.search_submit, { 'label': 'Go' }) }}
+
+		{{ form_rest(form) }}
+		{{ form_end(form) }}
+
+			<p>La recherche s'effectue parmis les champs suivants : nom, artiste, lien, type, tags.<br /><br />
+		{% if search %}
+			Résultat(s) trouvé(s) : {{ search|length }}</p>
+	    	<table>
+	    		<tr>
+		    		<th>Nom de l'entrée</th>
+		    		<th>Artiste</th>
+		    		<th>Lien</th>
+		    		<th>Tags</th>
+		    		<th>Type de l'entrée</th>
+		    		<th>Safe or not</th>
+		    		{# <th>Collection</th> #}
+		    	</tr>
+			{% for rows in search %}
+	    		<tr>
+	    			<td>{{ rows.getFavName }}</td>
+	    			<td>{{ rows.getFavArtiste }}</td>
+	    			<td><a href="{{ rows.getFavAdresse }}">{{ rows.getFavAdresse }}</a></td>
+	    			<td>{{ rows.getFavTags }}</td>
+	    			<td>{{ rows.getFavType }}</td>
+	    			
+	    			<td>
+	    			{% if rows.getFavNsfw == 0 %}
+	    			Safe
+	    			{% else %}
+	    			Not Safe !
+	    			{% endif %}
+	    			</td>
+
+	    			{#
+	    			<td>
+					{% if rows.getFavCollection == 0 %}
+	    			A trier
+	    			{% endif %}
+	    			</td> #}
+	    		<tr>
+	    	{% endfor %}
+	    	</table>
+
+	    {#{% elseif search|length == 0 %}
+	    	<p>Pas de résultat !</p>#}
+	    {% endif %}
+
+		<h2>Tous les favoris [{{ favoris|length }}]</h2>
+
+    	{% if favoris %}
+	    	<table>
+	    		<tr>
+		    		<th>Nom de l'entrée</th>
+		    		<th>Artiste</th>
+		    		<th>Lien</th>
+		    		<th>Tags</th>
+		    		<th>Type de l'entrée</th>
+		    		<th>Safe or not</th>
+		    		{# <th>Collection</th> #}
+		    	</tr>
+			{% for row in favoris %}
+	    		<tr>
+	    			<td>{{ row.getFavName }}</td>
+	    			<td>{{ row.getFavArtiste }}</td>
+	    			<td><a href="{{ row.getFavAdresse }}">{{ row.getFavAdresse }}</a></td>
+	    			<td>{{ row.getFavTags }}</td>
+	    			<td>{{ row.getFavType }}</td>
+	    			
+	    			<td>
+	    			{% if row.getFavNsfw == 0 %}
+	    			Safe
+	    			{% else %}
+	    			Not Safe !
+	    			{% endif %}
+	    			</td>
+
+	    			{#
+	    			<td>
+					{% if row.getFavCollection == 0 %}
+	    			A trier
+	    			{% endif %}
+	    			</td> #}
+	    		<tr>
+	    	{% endfor %}
+	    	</table>
+    	{% else %}
+
+    		<p>Pas d'entrée dans la table des favoris détectée.</p>
+
+    	{% endif %}
+		</div>
+{% endblock %}

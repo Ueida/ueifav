@@ -1,0 +1,23 @@
+{% extends "DropyBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }}- Ajouter une collection{% endblock %}
+
+{% block body %}
+	<h1>Formulaire d'ajout de collection</h1>
+		<div class="ueiuei">
+
+		{{ form_start(form) }}
+
+			{{ form_label(form.collec_name, 'Nom de la collection :') }}
+			{{ form_widget(form.collec_name) }}<br/>
+			{{ form_label(form.collec_desc, 'Description :' ) }}<br />
+			{{ form_widget(form.collec_desc) }}<br/>
+			{{ form_widget(form.collec_submit, { 'label': 'Ajouter la nouvelle collection' }) }}
+			
+		{# Fin du formulaire #}
+		{{ form_rest(form) }}
+		{{ form_end(form) }}
+		<p>
+			Tous les champs sont obligatoires
+		</p>
+{% endblock %}

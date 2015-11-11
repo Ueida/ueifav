@@ -1,0 +1,121 @@
+button {
+	min-width: 200px;
+	margin-bottom: 3px;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+ }
+ 
+body {
+	background-color: white; 
+	font-family: Tahoma, sans-serif; 
+	font-size: 100%;
+ }
+ 
+h1 {
+	font-size: 200%; 
+	color: navy; 
+	text-align: center;
+ }
+ 
+h2 {
+	font-size: 150%; 
+	color: red; 
+	padding-left: 15px;
+ }
+ 
+p,ul,li,td {
+	color: black; 
+ }
+ 
+a:link {
+	color: green;
+	text-decoration: underline;
+ }
+ 
+a:visited {
+	color: gray;
+ }
+ 
+a:hover {
+	color: red;
+	text-decoration: none;
+}
+
+a:active, a:focus {
+	color: red;
+}
+
+/* TABLE */
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table, th, td {
+	border: solid black 1px;
+}
+
+th, td {
+	padding: 5px;
+	min-width: 150px;
+}
+
+/* ENDTABLE */
+
+/* FORM */
+
+label, textarea, input[type="radio"] {
+	padding-bottom: 10px;
+}
+
+label {
+	min-width: 160px;
+	display: inline-block;
+}
+
+label.lab_radio {
+	min-width: 80px;
+}
+
+textarea, input[type="submit"], button#dropybundle_favoris_fav_submit, button#dropybundle_collections_collec_submit {
+	min-width: 490px;
+}
+
+input[type="text"], select {
+	min-width: 330px;
+}
+
+/* END FORM*/
+
+div.ueiuei {
+	margin: 15px;
+	padding: 15px;
+	border: black 1px solid;
+}
+
+nav {
+	border: 1px solid black;
+	text-align: center;
+	margin: 15px;
+	padding: 15px;
+}
+
+nav ul  li{
+	display: inline-block;
+	margin: 0 5px 0 5px;
+}
+
+nav a{
+	text-decoration: none;
+}
+
+footer {
+ border: 1px solid #e6e6e6;
+ text-align: center;
+ margin: 15px;
+ padding: 15px;
+}

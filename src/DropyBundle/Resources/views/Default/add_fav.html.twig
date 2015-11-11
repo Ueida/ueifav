@@ -1,0 +1,33 @@
+{% extends "DropyBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }}- Ajouter un favori{% endblock %}
+
+{% block body %}
+	<h1>Formulaire d'ajout de favori à la liste o/</h1>
+		<div class="ueiuei">
+
+		{{ form_start(form) }}
+
+			{{ form_label(form.fav_name, 'Nom :') }}
+			{{ form_widget(form.fav_name) }}<br/>
+			{{ form_label(form.fav_artiste, 'Artiste :') }}
+			{{ form_widget(form.fav_artiste) }}<br/>
+			{{ form_label(form.fav_adresse, 'Adresse* :') }}
+			{{ form_widget(form.fav_adresse) }}<br/>
+			{{ form_label(form.fav_tags, 'Tags* [Séparez les entrées par des points-virgule]:') }}<br />
+			{{ form_widget(form.fav_tags) }}<br/>
+			{{ form_label(form.fav_type, 'Type* :') }}
+			{{ form_widget(form.fav_type) }}<br/>
+			{{ form_label(form.fav_nsfw, 'NSFW ? :') }}
+			{{ form_widget(form.fav_nsfw) }}<br/>
+			{{ form_widget(form.fav_submit, { 'label': 'Enregistrer l\'entrée' }) }}
+			
+		{# Fin du formulaire #}
+		{{ form_rest(form) }}
+		{{ form_end(form) }}
+		<p>
+			* : Champs obligatoire<br />
+			La valeur par défaut du type est simplement "image". Autre exemples : gif, webm, lien-complet.
+		</p>
+		</div>
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    dropy.example:
+#        class: DropyBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
